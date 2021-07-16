@@ -15,3 +15,15 @@ function getTask() {
 function getTaskById(id) {
   return db("tasks").where("id", id).first();
 }
+
+function createTask(task) {
+  return db("tasks")
+    .insert(task, "id")
+    .then(([id]) => {
+      return findTaskById;
+    });
+}
+
+function deleteTask(id) {
+  return getTaskById(id).del();
+}
