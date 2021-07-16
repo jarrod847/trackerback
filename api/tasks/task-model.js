@@ -20,10 +20,14 @@ function createTask(task) {
   return db("tasks")
     .insert(task, "id")
     .then(([id]) => {
-      return findTaskById;
+      return findTaskById(id);
     });
 }
 
 function deleteTask(id) {
   return getTaskById(id).del();
+}
+
+function updateTask(id, changes) {
+  return getTaskById(id).update(changes);
 }
