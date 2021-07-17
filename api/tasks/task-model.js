@@ -1,4 +1,4 @@
-const db = require("../database/config");
+const db = require("../../database/config");
 
 module.exports = {
   getTask,
@@ -20,7 +20,7 @@ function createTask(task) {
   return db("tasks")
     .insert(task, "id")
     .then(([id]) => {
-      return findTaskById(id);
+      return getTaskById(id);
     });
 }
 
