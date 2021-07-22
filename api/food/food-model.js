@@ -11,3 +11,15 @@ module.exports = {
 function getFoods() {
   return db("food");
 }
+
+function getFoodById(id) {
+  return db("food").where("id", id).first();
+}
+
+function addFood(food) {
+  return db("food")
+    .insert(food, "id")
+    .then(([id]) => {
+      return getFoodById(id);
+    });
+}
