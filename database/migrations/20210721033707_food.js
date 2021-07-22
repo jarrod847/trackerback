@@ -4,6 +4,9 @@ exports.up = function (knex) {
     table.string("name");
     table.string("protein");
     table.string("Carbohydrates");
+    table.string("Fat");
+    table.string("Sugar");
+    table.string("Saturated Fat");
   });
 };
 
