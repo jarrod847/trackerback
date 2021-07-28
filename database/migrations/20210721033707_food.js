@@ -3,10 +3,11 @@ exports.up = function (knex) {
     table.increments("id").unique();
     table.string("name");
     table.string("protein");
-    table.string("Carbohydrates");
-    table.string("Fat");
+    table.string("Carbs");
+    table.string("Trans Fat");
     table.string("Sugar");
-    table.string("Saturated Fat");
+    table.string("Calories");
+    table.string("Sodium");
   });
 };
 
