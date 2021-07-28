@@ -19,4 +19,13 @@ router.post("/add", async (req, res) => {
   }
 });
 
+router.get("/:id", async (req, res) => {
+  try {
+    const foodinfo = await food.getFoodById(req.params.id);
+    res.status(200).json({ message: "got food by id", Food: foodinfo });
+  } catch (e) {
+    res.status(500).json({ message: "coould not food", error: e });
+  }
+});
+
 module.exports = router;
