@@ -2,11 +2,12 @@ exports.up = function (knex) {
   return knex.schema.createTable("food", (table) => {
     table.increments("id").unique();
     table.string("name");
-    table.string("protein");
-    table.string("Carbohydrates");
-    table.string("Fat");
-    table.string("Sugar");
-    table.string("Saturated Fat");
+    table.integer("protein");
+    table.integer("Carbs");
+    table.integer("Trans_Fat");
+    table.integer("Sugar");
+    table.integer("Calories");
+    table.integer("Sodium");
   });
 };
 
